@@ -36,4 +36,3 @@ jobs:
       run: npm install -g surge
     - name: deploying on surge
       run: surge ./build http://fasih-react.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
-    	  

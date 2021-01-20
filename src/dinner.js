@@ -1,8 +1,8 @@
 import React from 'react';
-function Dinner (){
+function Dinner (props){
     return(
         <div>
-            <h1>Hello World</h1>
+            <h1>Today we are serving {props.dishName}</h1>
             <h1>I love food</h1>
         </div>
     )

@@ -1,12 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {Message} from "./message.js";
 import './App.css';
 import Dinner from './dinner.js';
 
 function App() {
+  
+  let [count, setCount] = useState(1);
+  let [isMorning, setMorning] = useState(true)
+
   return (
-    <div className="App">
-      <h1>Hello World from fasih</h1>
-       <Dinner />
+    <div className={`box ${isMorning ? 'dayLight': ''}`}>
+    <Message counter={count}/>
+      <h2>Daytime = {isMorning ? 'Morning' : 'Night'}</h2>
+      
+      
+       <button onClick={()=> setCount(++count)}>Update Counter </button>
+       <button onClick={()=> setCount(0)}>Reset </button>
+       <button onClick={()=>setMorning(!isMorning)}>Update day </button>
     </div>
   );
 }
